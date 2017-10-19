@@ -6,7 +6,7 @@ typed-intl is an internationlization (intl/i18n) library for TypeScript/JavaScri
 ## Motivation
 I've tried out quite a few internationalization libraries, but none of them made me happy. Some of them only concentrated on picking the right translations but did not provide formatting or plural stuff. Others provided the whole stuff required, but where quite verbose in usage (e.g. [Format.js](https://formatjs.io) and its React integration [react-intl](https://github.com/yahoo/react-intl)).
 
-And finally none of them provided (type)safe message access and formatting options, so that the compiler would point me towards access to non existing messages or (accidentially) left out translation strings. But as I have a strong [Scala](http://scala-lang.org) background an amm using TypeScript for my React apps which has a powerful type system, I wanted to have a solution that does exactly this.
+And finally none of them provided (type)safe message access and formatting options, so that the compiler would point me towards access to non existing messages or (accidentially) left out translation strings. But as I have a strong [Scala](http://scala-lang.org) background and am using TypeScript for my React apps which has a powerful type system, I wanted to have a solution that does exactly this.
 
 ## Design Goals & Features
 Thus these where my design goals:
