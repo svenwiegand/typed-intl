@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/typed-intl.svg)](https://badge.fury.io/js/typed-intl)
+[![npm version](https://badge.fury.io/js/typed-intl.svg)](https://badge.fury.io/js/typed-intl) [![Build Status](https://travis-ci.org/svenwiegand/typed-intl.svg?branch=master)](https://travis-ci.org/svenwiegand/typed-intl) [![Coverage Status](https://coveralls.io/repos/github/svenwiegand/typed-intl/badge.svg?branch=master)](https://coveralls.io/github/svenwiegand/typed-intl?branch=master)
 
 # typed-intl - Typesafe internationalization for TypeScript/JavaScript Apps
 typed-intl is an internationlization (intl/i18n) library for TypeScript/JavaScript apps.
