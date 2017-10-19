@@ -170,3 +170,6 @@ Lets look at an example:
 - Then `selectPreferredLanguage()` will set `preferredLanguage()` to `de-CH`.
 
 **Explanation:** Preferred languages are checked in the specified order as the first one is expected to be the most preferred. As we do not have a translation for `it-CH` nor for `it`, we need to look at `de-CH` next. We do not have an exact match for `de-CH`, but at least the language `de` is supported and thus `de-CH` is chosen. `fr-CH` would have an exact match but comes later in the list of preferred languages.
+
+## API Documentation
+This library comes with a [full API documentation](https://rawgit.com/svenwiegand/typed-intl/master/docs/globals.html).
