@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "sourceMap": false,
+    "declaration": true,
+    "outDir": "dist",
+    "removeComments": false,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "@types/node"
+    ]
+  },
+  "files": [
+    "src/LanguageTag.ts",
+    "src/Translator.ts",
+    "src/Format.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+
+  "typedocOptions": {
+    "module": "commonjs",
+    "target": "es5",
+
+    "out": "./docs",
+    "mode": "file",
+
+    "exclude": "**/*.test.ts",
+    "excludePrivate": true,
+    "excludeNotExported": true,
+    "readme": "API.md",
+
+    "theme": "minimal"
+  }
+}

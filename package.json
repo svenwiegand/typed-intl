@@ -1,0 +1,84 @@
+{
+  "name": "typed-intl",
+  "version": "1.0.0",
+  "description": "Typed internationalization (intl/i18n) library for TypeScript/JavaScript apps.",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "jam": {
+    "main": "./dist/index.browser.js"
+  },
+  "browser": {
+    "dist/index.js": "./dist/index.browser.js"
+  },
+  "scripts": {
+    "build": "webpack || echo not ok",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "coverage": "npm test -- --coverage --no-cache",
+    "coverage:watch": "npm run coverage -- --watch",
+    "prepare": "npm run build && npm test && npm run doc",
+    "release": "standard-version && npm pack",
+    "doc": "typedoc src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svenwiegand/typed-intl.git"
+  },
+  "keywords": [
+    "typescript",
+    "library",
+    "internationalization",
+    "internationalisation",
+    "intl",
+    "i18n",
+    "message",
+    "translate",
+    "format",
+    "plural"
+  ],
+  "author": "Sven Wiegand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svenwiegand/typed-intl/issues"
+  },
+  "homepage": "https://github.com/svenwiegand/typed-intl/issues",
+  "devDependencies": {
+    "@types/intl": "^1.2.0",
+    "@types/intl-messageformat": "^1.3.0",
+    "@types/jest": "^21.1.1",
+    "@types/node": "^8.0.31",
+    "browserify": "^14.4.0",
+    "delete-empty": "^1.0.1",
+    "dts-bundle": "^0.7.3",
+    "intl-locales-supported": "^1.0.0",
+    "intl": "^1.2.5",
+    "jest": "^20.0.4",
+    "standard-version": "^4.2.0",
+    "ts-jest": "^20.0.10",
+    "ts-loader": "^2.3.3",
+    "tslint": "^5.6.0",
+    "tslint-loader": "^3.5.3",
+    "typedoc": "^0.9.0",
+    "typescript": "2.4.2",
+    "webpack": "3.5.5",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "core-js": "^2.5.1",
+    "intl-messageformat": "^2.1.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "mapCoverage": true,
+    "collectCoverageFrom": ["src/**/*.ts"],
+    "coveragePathIgnorePatterns": ["src/.*\\.test\\.ts$", "\\.d\\.ts$", "\/node_modules\/"],
+    "testRegex": "src/.*\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  }
+}
