@@ -1,4 +1,4 @@
-import { languageTag } from './LanguageTag';
+import { languageTag } from '.';
 
 describe('LanguageTag', () => {
     it('must only provide the language for a language tag without subtags', () => {

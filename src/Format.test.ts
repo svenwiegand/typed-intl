@@ -9,7 +9,7 @@ import {
     select,
     selectObject,
     setFormats
-} from './Format';
+} from '.';
 import { languageTag } from './LanguageTag';
 import IntlPolyfill = require('intl');
 import areIntlLocalesSupported = require('intl-locales-supported');

@@ -217,7 +217,9 @@ export function pickPreferredLanguage(availableTranslations: LanguageTag[],
     return bestLanguagePreference || usersPreferredLanguages[0];
 }
 
-let _preferredLanguage: LanguageTag | undefined = navigator.language ? languageTag(navigator.language) : undefined;
+let _preferredLanguage: LanguageTag | undefined = navigator.language ?
+    languageTag(navigator.language) :
+    /* istanbul ignore next: not reachable in test */ undefined;
 
 /**
  * The preferred language to be used when calling [[MessageProvider.messages]].
@@ -241,8 +243,9 @@ export function setPreferredLanguage(language: LanguageTag): void {
 /**
  * Polyfill for `navigator.languages`.
  */
-const navigatorLanguages =
-    navigator.languages ? navigator.languages : (navigator.language ? [navigator.language] : ['en']);
+const navigatorLanguages = navigator.languages ?
+    navigator.languages :
+    /* istanbul ignore next: not reachable in test */ (navigator.language ? [navigator.language] : ['en']);
 
 /**
  * Sets the [[preferredLanguage]] based on the translations supported by this application and the user's

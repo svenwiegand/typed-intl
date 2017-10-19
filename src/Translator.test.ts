@@ -1,5 +1,11 @@
-import { LanguageTag, languageTag } from './LanguageTag';
-import { pickPreferredLanguage, preferredLanguage, selectPreferredLanguage, translate } from './Translator';
+import {
+    LanguageTag,
+    languageTag,
+    pickPreferredLanguage,
+    preferredLanguage,
+    selectPreferredLanguage,
+    translate
+} from '.';
 
 const en = languageTag('en');
 const de = languageTag('de');
@@ -18,7 +24,7 @@ const deChMessages = {
 };
 const translator = translate(enMessages)
     .partiallySupporting(de, deMessages)
-    .partiallySupporting('de-CH', deChMessages);
+    .partiallySupporting('de-Latn-CH', deChMessages);
 
 const enMessageOverrides = {
     welcome: 'Welcome to the overrides',
@@ -112,5 +118,11 @@ describe('Translator', () => {
 
         const msg = translator.messages();
         expect(msg.welcome).toBe(deChMessages.welcome);
+    });
+
+    it('must init the global preferred translation value from navigator.languages', () => {
+        expect(navigator.languages).toEqual(['en-US', 'en']);
+        selectPreferredLanguage(['de']);
+        expect(preferredLanguage()!.tag).toEqual('en-US');
     });
 });
