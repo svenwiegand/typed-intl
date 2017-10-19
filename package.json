@@ -1,6 +1,6 @@
 {
   "name": "typed-intl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typed internationalization (intl/i18n) library for TypeScript/JavaScript apps.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -72,8 +72,14 @@
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "mapCoverage": true,
-    "collectCoverageFrom": ["src/**/*.ts"],
-    "coveragePathIgnorePatterns": ["src/.*\\.test\\.ts$", "\\.d\\.ts$", "\/node_modules\/"],
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/.*\\.test\\.ts$",
+      "\\.d\\.ts$",
+      "/node_modules/"
+    ],
     "testRegex": "src/.*\\.test\\.ts$",
     "moduleFileExtensions": [
       "ts",
