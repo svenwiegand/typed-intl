@@ -217,11 +217,8 @@ export function pickPreferredLanguage(availableTranslations: LanguageTag[],
     return bestLanguagePreference || usersPreferredLanguages[0];
 }
 
-// tslint:disable
-const nav: Navigator = window['navigator']; // tslint:enable
-
-let _preferredLanguage: LanguageTag | undefined = nav && nav.language ?
-    languageTag(nav.language) :
+let _preferredLanguage: LanguageTag | undefined = typeof navigator !== 'undefined' && navigator.language ?
+    languageTag(navigator.language) :
     /* istanbul ignore next: not reachable in test */ undefined;
 
 /**
@@ -246,9 +243,9 @@ export function setPreferredLanguage(language: LanguageTag): void {
 /**
  * Polyfill for `navigator.languages`.
  */
-const navigatorLanguages = nav && nav.languages ?
-    nav.languages :
-    /* istanbul ignore next: not reachable in test */ (nav.language ? [nav.language] : ['en']);
+const navigatorLanguages = typeof navigator !== 'undefined' && navigator.languages ?
+    navigator.languages :
+    /* istanbul ignore next: not reachable in test */ (navigator.language ? [navigator.language] : ['en']);
 
 /**
  * Sets the [[preferredLanguage]] based on the translations supported by this application and the user's
