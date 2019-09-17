@@ -12,7 +12,7 @@ import {
 } from '.';
 import { languageTag } from './LanguageTag';
 import IntlPolyfill = require('intl');
-import areIntlLocalesSupported = require('intl-locales-supported');
+import areIntlLocalesSupported from 'intl-locales-supported';
 
 if (!areIntlLocalesSupported(['en', 'de'])) {
     Intl.NumberFormat = IntlPolyfill.NumberFormat;
